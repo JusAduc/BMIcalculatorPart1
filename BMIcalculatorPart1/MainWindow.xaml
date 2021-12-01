@@ -43,8 +43,11 @@
         <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Margin="6,0,0,0" Width="100" Click="clearBtn_Click"/>
         <Button x:Name="importBtn" Content="Import" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="2" Margin="6,0,0,0" Width="100"/>
         <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="4" Margin="43,0,0,0" Width="100" Click="exitBtn_Click"/>
-        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0"/>
 
+
+        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0">
+        </DataGrid>
+        <!--Help with datagrids: https://www.c-sharpcorner.com/UploadFile/mahesh/datagrid-in-wpf/-->
 
     </Grid>
 </Window>

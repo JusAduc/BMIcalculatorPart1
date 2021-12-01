@@ -19,6 +19,18 @@ namespace BMIcalculatorPart1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+
+    public class Author
+    {
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Phone_Number { get; set; }
+        public double User_Height { get; set; }
+        public double User_Weight { get; set; }
+    }
+
     public partial class MainWindow : Window
     {
         string firstName;
@@ -47,6 +59,7 @@ namespace BMIcalculatorPart1
                 phoneNumber = phoneInput.Text;
                 height = Double.Parse(heightInput.Text);
                 weight = Double.Parse(weightInput.Text);
+                fileText();
                 MessageBox.Show($"{firstName} {lastName} {phoneNumber} {height} {weight}");
             }
         }
@@ -66,9 +79,8 @@ namespace BMIcalculatorPart1
 
         public void fileText()
         {
-            string userInfo = $"Add all user info here:";
-            //Need to fix, ran out of time
-            File.WriteAllLines("information", userInfo);
+            string userInfo = $"Your name is {firstName} {lastName}. Your phone number is {phoneNumber}. Your height is {height} and weight is {weight}.";
+            File.WriteAllText("userInformation.txt", userInfo);
         }
     }
 }
