@@ -45,9 +45,9 @@
         <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="4" Margin="43,0,0,0" Width="100" Click="exitBtn_Click"/>
 
 
-        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0">
-        </DataGrid>
+        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0" Name="dataGrid" RowHeight="30" ColumnWidth="100" IsReadOnly="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
         <!--Help with datagrids: https://www.c-sharpcorner.com/UploadFile/mahesh/datagrid-in-wpf/-->
+        <!--Need way to add rows after submit button is pressed.-->
 
     </Grid>
 </Window>

@@ -22,7 +22,7 @@ namespace BMIcalculatorPart1
     /// 
 
 
-    public class Author
+    public class Info
     {
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
@@ -30,6 +30,7 @@ namespace BMIcalculatorPart1
         public double User_Height { get; set; }
         public double User_Weight { get; set; }
     }
+
 
     public partial class MainWindow : Window
     {
@@ -39,6 +40,21 @@ namespace BMIcalculatorPart1
         double height;
         double weight;
 
+        private List<Info> LoadCollectionData()
+        {
+            List<Info> info = new List<Info>();
+            info.Add(new Info()
+            {
+                First_Name =firstName,
+                Last_Name=lastName,
+                Phone_Number=phoneNumber,
+                User_Height=height,
+                User_Weight=weight
+            });
+            return info;
+        }
+
+       
 
         public MainWindow()
         {
@@ -60,6 +76,7 @@ namespace BMIcalculatorPart1
                 height = Double.Parse(heightInput.Text);
                 weight = Double.Parse(weightInput.Text);
                 fileText();
+                dataGrid.ItemsSource = LoadCollectionData();
                 MessageBox.Show($"{firstName} {lastName} {phoneNumber} {height} {weight}");
             }
         }
