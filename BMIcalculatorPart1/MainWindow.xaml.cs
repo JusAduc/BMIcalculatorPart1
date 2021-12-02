@@ -57,6 +57,21 @@ namespace BMIcalculatorPart1
             return info;
         }
 
+        private List<Info> LoadCollectionData()
+        {
+            List<Info> info = new List<Info>();
+            info.Add(new Info()
+            {
+                First_Name =firstName,
+                Last_Name=lastName,
+                Phone_Number=phoneNumber,
+                User_Height=height,
+                User_Weight=weight
+            });
+            return info;
+        }
+
+       
 
 
         public MainWindow()
