@@ -36,18 +36,18 @@
         <TextBox x:Name="heightInput" Grid.Column="1" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" Grid.Row="3" FontSize="20"/>
         <TextBox x:Name="weightInput" Grid.Column="1" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" Grid.Row="4" FontSize="20"/>
         <Label Content="Your BMI Is:" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="25"/>
-        <TextBlock x:Name="userBMI" Text="" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" Margin="8,0,0,0"/>
+        <TextBlock x:Name="userBMI" Text="" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" Margin="5,0,0,5"/>
         <Label Content="BMI Results" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" FontWeight="Bold"/>
         <Label Content="Message:" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.Row="3" FontWeight="Bold"/>
         <Button x:Name="submitBtn" Content="Submit" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Width="100" Click="submitBtn_Click"/>
         <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Margin="6,0,0,0" Width="100" Click="clearBtn_Click"/>
-        <Button x:Name="importBtn" Content="Import" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="2" Margin="6,0,0,0" Width="100"/>
+        <Button x:Name="importBtn" Content="Import" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="2" Margin="6,0,0,0" Width="100" Click="importBtn_Click"/>
         <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Grid.Column="4" Margin="43,0,0,0" Width="100" Click="exitBtn_Click"/>
 
 
-        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0">
-        </DataGrid>
+        <DataGrid AutoGenerateColumns="True" Grid.Column="0" HorizontalAlignment="Left" Height="210" Grid.Row="5" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="36,76,0,0" Name="dataGrid" RowHeight="30" ColumnWidth="100" IsReadOnly="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
         <!--Help with datagrids: https://www.c-sharpcorner.com/UploadFile/mahesh/datagrid-in-wpf/-->
+        <!--Need way to add rows after submit button is pressed.-->
 
     </Grid>
 </Window>
