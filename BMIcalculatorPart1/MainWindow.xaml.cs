@@ -43,34 +43,44 @@ namespace BMIcalculatorPart1
         double weightKg;
         double BMI;
 
-        private List<Info> LoadCollectionData()
-        {
-            List<Info> info = new List<Info>();
-            info.Add(new Info()
-            {
-                First_Name = firstName,
-                Last_Name = lastName,
-                Phone_Number = phoneNumber,
-                User_Height = height,
-                User_Weight = weight
-            });
-            return info;
-        }
+        //private List<Info> LoadCollectionData()
+        //{
+        //    List<Info> info = new List<Info>();
+        //    info.Add(new Info()
+        //    {
+        //        First_Name = firstName,
+        //        Last_Name = lastName,
+        //        Phone_Number = phoneNumber,
+        //        User_Height = height,
+        //        User_Weight = weight
+        //    });
+        //    return info;
+        //}
 
-        private List<Info> LoadCollectionData()
-        {
-            List<Info> info = new List<Info>();
-            info.Add(new Info()
-            {
-                First_Name =firstName,
-                Last_Name=lastName,
-                Phone_Number=phoneNumber,
-                User_Height=height,
-                User_Weight=weight
-            });
-            return info;
-        }
+        //private List<Info> LoadCollectionDat()
+        //{
+        //    List<Info> info = new List<Info>();
+        //    info.Add(new Info()
+        //    {
+        //        First_Name =firstName,
+        //        Last_Name=lastName,
+        //        Phone_Number=phoneNumber,
+        //        User_Height=height,
+        //        User_Weight=weight
+        //    });
+        //    return info;
+        //}
 
+        public class Customer
+        {
+            public string lastName { get; set; }
+            public string firstName { get; set; }
+            public string phoneNumber { get; set; }
+            public int heightCm { get; set; }
+            public int weightKg { get; set; }
+            public int BMI { get; set; }
+
+        }
        
 
 
@@ -92,11 +102,29 @@ namespace BMIcalculatorPart1
                 height = Double.Parse(heightInput.Text);
                 weight = Double.Parse(weightInput.Text);
                 fileText();
-                dataGrid.ItemsSource = LoadCollectionData();
+                //dataGrid.ItemsSource = LoadCollectionData();
                 weightKg = weight / 2.205;
                 heightCm = height * 2.54;
                 BMI=weightKg/heightCm/heightCm*10000;
                 userBMI.Text = $"{BMI}";
+                string userMessage;
+                if (BMI < 18.5)
+                {
+                    userMessage = "According to CDC.gov BMI Calculator you are underweight.";
+                } else if (BMI <24.9 && BMI>18.5)
+                {
+                    userMessage = "According to CDC.gov BMI Calculator you have a normal body weight.";
+                } else if (BMI <29.9 && BMI > 24.9)
+                {
+                    userMessage = "According to CDC.gov BMI Calculator you are overweight.";
+                } else if (BMI >= 30)
+                {
+                    userMessage = "According to CDC.gov BMI Calculator you are obese.";
+                } else
+                {
+                    userMessage = "Something broke...";
+                }
+                userMessageXAML.Text = $"{userMessage}";
             }
         }
         private void clearBtn_Click(object sender, RoutedEventArgs e)
@@ -106,6 +134,7 @@ namespace BMIcalculatorPart1
             phoneInput.Text = "";
             heightInput.Text = "";
             weightInput.Text = "";
+            userBMI.Text = "";
         }
 
         private void exitBtn_Click(object sender, RoutedEventArgs e)
