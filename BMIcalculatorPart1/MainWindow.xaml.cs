@@ -135,6 +135,7 @@ namespace BMIcalculatorPart1
             heightInput.Text = "";
             weightInput.Text = "";
             userBMI.Text = "";
+            userMessageXAML.Text = "";
         }
 
         private void exitBtn_Click(object sender, RoutedEventArgs e)
